@@ -233,8 +233,9 @@ body {
     bottom: 90px;
     width: 300px;
     right: -70px;
-    padding-inline: 1rem;
+    padding: 1rem;
     border-radius: 1rem;
+    transition: opacity 0.3s ease-in-out;
   }
 
   .share-section::before {
@@ -246,11 +247,11 @@ body {
     border-right: 20px solid transparent;
     border-top: 20px solid var(--dark-gray-blue);
     margin: 2rem;
-    top: 58%;
+    top: 45%;
     left: 43%;
   }
 
   .hidden {
-    display: none;
+    opacity: 0;
   }
 }
