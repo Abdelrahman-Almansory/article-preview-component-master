@@ -1,0 +1,254 @@
+:root {
+  --dark-gray-blue: hsl(217, 19%, 35%);
+  --dark-blue: hsl(214, 17%, 51%);
+  --gray-blue: hsl(212, 23%, 69%);
+  --light-gray-blue: hsl(210, 46%, 95%);
+  --fw-sm: 500;
+  --fw-lg: 700;
+  --ff-serif: "Manrope", serif;
+}
+
+/* CSS Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* Styling Mobile first */
+
+body {
+  /* max-height: 100dvh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  font-family: var(--ff-serif);
+  background-color: var(--light-gray-blue);
+  margin: 2rem;
+}
+
+.component-container {
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.info-section {
+  padding: 3rem 2.5rem 1.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.picture-section {
+  background-image: url(images/drawers.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+
+.info-section__header {
+  font-size: 1.25rem;
+  font-weight: var(--fw-lg);
+  color: var(--dark-gray-blue);
+}
+
+.info-section__desc {
+  font-weight: var(--fw-sm);
+  color: var(--dark-blue);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.person-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-picture {
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.hero-name {
+  color: var(--dark-gray-blue);
+  font-weight: var(--fw-lg);
+  font-size: 0.84rem;
+}
+
+.hero-date {
+  color: var(--gray-blue);
+  font-size: 13px;
+  word-spacing: 0.2rem;
+}
+
+.share,
+.share2 {
+  background-color: var(--light-gray-blue);
+  padding: 0.5rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.share2 {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-content: center;
+  font-size: 1.5rem;
+  padding: 0;
+}
+
+.share-section {
+  background-color: var(--dark-gray-blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2.5rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  right: 0;
+  transition: bottom 0.3s ease-in-out;
+}
+
+.share-left,
+.icons-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icons-section img {
+  cursor: pointer;
+}
+
+.share-title {
+  color: var(--gray-blue);
+  font-weight: var(--fw-sm);
+  letter-spacing: 0.5rem;
+}
+
+.hidden {
+  bottom: -100%;
+}
+
+@media (min-width: 700px) {
+  body {
+    margin: 0 3rem;
+  }
+  .component-container {
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 1fr;
+    max-width: 750px;
+    overflow: visible;
+  }
+
+  .picture-section {
+    height: 100%;
+    background-size: cover;
+    background-position: left;
+  }
+
+  .info-section {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .share-section {
+    position: absolute;
+    bottom: 90px;
+    width: 300px;
+    right: -70px;
+    padding-inline: 1rem;
+    border-radius: 1rem;
+  }
+
+  .share-section::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid var(--dark-gray-blue);
+    margin: 2rem;
+    top: 58%;
+    left: 43%;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
